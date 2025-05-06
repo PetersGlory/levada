@@ -1,707 +1,601 @@
-"use client";
-
-import React from "react";
-import Image from "next/image";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
+"use client"
+import Image from "next/image"
+import Link from "next/link"
+import { ArrowRight, CheckCircle, Star } from "lucide-react"
+import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 
 export default function Home() {
   return (
-    <div className="flex flex-col px-0.5">
-      <div className="flex flex-col bg-white w-full">
-        <div className="flex flex-col pt-5 pb-11 w-full bg-neutral-900 min-h-[1200px]">
-          {/* Header */}
-          <Navbar />
+    <div className="flex flex-col min-h-screen bg-neutral-900">
+      {/* Header */}
+      <header className="w-full py-4 bg-neutral-900">
+        <Navbar />
+      </header>
 
-          {/* Hero Section */}
-          <div className="mt-28 w-full max-w-7xl mx-auto px-5 md:px-20">
-            <div className="flex flex-col md:flex-row gap-8">
-              {/* Left Column - Main Content */}
-              <div className="flex flex-col w-full md:w-3/4">
-                <div className="flex flex-col mt-14 w-full">
-                  <div className="flex flex-col md:flex-row gap-8">
-                    {/* Hero Image */}
-                    <div className="w-full md:w-1/3">
-                      <img
-                        loading="lazy"
-                        srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/3d7f97fe9d863cdf0ba02c585c39efa91c6cd4b7?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/3d7f97fe9d863cdf0ba02c585c39efa91c6cd4b7?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/3d7f97fe9d863cdf0ba02c585c39efa91c6cd4b7?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/3d7f97fe9d863cdf0ba02c585c39efa91c6cd4b7?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/3d7f97fe9d863cdf0ba02c585c39efa91c6cd4b7?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/3d7f97fe9d863cdf0ba02c585c39efa91c6cd4b7?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/3d7f97fe9d863cdf0ba02c585c39efa91c6cd4b7?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/3d7f97fe9d863cdf0ba02c585c39efa91c6cd4b7?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                        className="object-contain w-full aspect-[0.96]"
-                        alt="Hero Image"
-                      />
-                    </div>
-
-                    {/* Hero Text and Form */}
-                    <div className="flex flex-col w-full md:w-2/3">
-                      <div className="flex flex-col items-center">
-                        <h1 className="text-4xl md:text-7xl tracking-tighter text-center leading-tight md:leading-[92px] text-stone-300">
-                          Discover <br />
-                          Your Potential
-                        </h1>
-                        <p className="mt-8 text-lg tracking-normal text-center text-neutral-500 max-w-md">
-                          Talent meets boundless opportunities. As a dynamic platform 
-                          connecting exceptional African talent with reputable 
-                          organizations worldwide, Levada is your gateway to a thriving 
-                          career and a global network of possibilities.
-                        </p>
-                        <div className="flex relative justify-center mt-8 w-full max-w-md">
-                          <input
-                            type="email"
-                            placeholder="name@email.com"
-                            className="w-full py-6 px-8 text-base bg-stone-950 rounded-[50px] text-stone-300 focus:outline-none focus:ring-2 focus:ring-violet-400"
-                          />
-                          <button className="absolute right-4 top-1/2 -translate-y-1/2 py-4 px-8 text-base font-medium bg-violet-400 rounded-[40px] text-stone-950 shadow-[0px_20px_35px_rgba(153,141,235,0.25)] hover:bg-violet-500 transition-colors">
-                            Try Levada
-                          </button>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Additional Content */}
-                  <div className="flex flex-col md:flex-row gap-8 mt-16">
-                    <div className="w-full md:w-1/2">
-                      <img
-                        loading="lazy"
-                        srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/e4686978958ee6de86977edf6539200ade3be83c?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/e4686978958ee6de86977edf6539200ade3be83c?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e4686978958ee6de86977edf6539200ade3be83c?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/e4686978958ee6de86977edf6539200ade3be83c?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/e4686978958ee6de86977edf6539200ade3be83c?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/e4686978958ee6de86977edf6539200ade3be83c?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/e4686978958ee6de86977edf6539200ade3be83c?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/e4686978958ee6de86977edf6539200ade3be83c?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                        className="object-contain w-full aspect-[1.02]"
-                        alt="Additional Content Image"
-                      />
-                    </div>
-                    <div className="w-full md:w-1/2">
-                      <img
-                        loading="lazy"
-                        srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/05c65ae0f4d3a92d0f49bff626c67ac7298caf92?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/05c65ae0f4d3a92d0f49bff626c67ac7298caf92?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/05c65ae0f4d3a92d0f49bff626c67ac7298caf92?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/05c65ae0f4d3a92d0f49bff626c67ac7298caf92?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/05c65ae0f4d3a92d0f49bff626c67ac7298caf92?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/05c65ae0f4d3a92d0f49bff626c67ac7298caf92?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/05c65ae0f4d3a92d0f49bff626c67ac7298caf92?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/05c65ae0f4d3a92d0f49bff626c67ac7298caf92?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                        className="object-contain w-full aspect-[1.7]"
-                        alt="Additional Content Image 2"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Right Column - Testimonials */}
-              <div className="flex flex-col w-full md:w-1/4">
-                <div className="flex flex-col text-xs leading-tight text-neutral-500">
-                  <div className="relative w-full aspect-[0.922]">
-                    <img
-                      loading="lazy"
-                      srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/30bb1eb16c8708f59ffd86c537709baad849a700?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/30bb1eb16c8708f59ffd86c537709baad849a700?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/30bb1eb16c8708f59ffd86c537709baad849a700?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/30bb1eb16c8708f59ffd86c537709baad849a700?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/30bb1eb16c8708f59ffd86c537709baad849a700?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/30bb1eb16c8708f59ffd86c537709baad849a700?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/30bb1eb16c8708f59ffd86c537709baad849a700?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/30bb1eb16c8708f59ffd86c537709baad849a700?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                      className="object-cover absolute inset-0 size-full rounded-lg"
-                      alt="Felicia Akerele"
+      {/* Hero Section */}
+      <section className="relative w-full pt-20 pb-24 overflow-hidden">
+        <div className="container px-4 mx-auto">
+          <div className="grid gap-12 lg:grid-cols-3 items-center">
+            {/* Main Content - Takes 2/3 on large screens */}
+            <div className="lg:col-span-2 space-y-8">
+              <div className="grid md:grid-cols-2 gap-8 items-center">
+                {/* Hero Image (Mobile: top, Desktop: left) */}
+                <div className="flex justify-center md:justify-start">
+                  <div className="relative w-full max-w-[280px] aspect-square rounded-2xl overflow-hidden bg-neutral-800">
+                    <Image
+                      src="/img/hero-user-1.png"
+                      width={400}
+                      height={400}
+                      alt="Hero Image"
+                      className="object-cover"
+                      priority
                     />
-                    <div className="absolute bottom-4 left-4 text-white">Felicia Akerele</div>
                   </div>
-                  <img
-                    loading="lazy"
-                    srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/8a3b8c3c75cb59f4767e2baef223c7228e55a34e?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/8a3b8c3c75cb59f4767e2baef223c7228e55a34e?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/8a3b8c3c75cb59f4767e2baef223c7228e55a34e?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/8a3b8c3c75cb59f4767e2baef223c7228e55a34e?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/8a3b8c3c75cb59f4767e2baef223c7228e55a34e?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/8a3b8c3c75cb59f4767e2baef223c7228e55a34e?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/8a3b8c3c75cb59f4767e2baef223c7228e55a34e?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/8a3b8c3c75cb59f4767e2baef223c7228e55a34e?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                    className="object-contain w-full aspect-[1.15] mt-8 rounded-lg"
-                    alt="Mark Gabriel"
+                </div>
+
+                {/* Hero Text */}
+                <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                  <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold tracking-tighter text-stone-300 leading-tight">
+                    Discover <br />
+                    Your Potential
+                  </h1>
+                  <p className="mt-6 text-lg text-neutral-400 max-w-md">
+                    Talent meets boundless opportunities. Connecting exceptional African talent with reputable
+                    organizations worldwide, Levada is your gateway to a thriving career.
+                  </p>
+                </div>
+              </div>
+
+              {/* Email Signup */}
+              <div className="flex justify-center md:justify-start w-full max-w-xl mx-auto md:mx-0">
+                <div className="relative w-full">
+                  <input
+                    type="email"
+                    placeholder="name@email.com"
+                    className="w-full py-4 px-6 pr-36 text-base bg-neutral-800 rounded-full text-stone-300 focus:outline-none focus:ring-2 focus:ring-violet-400 transition-all"
                   />
-                  <div className="text-center mt-4">Mark Gabriel</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Organizations Section */}
-          <div className="flex flex-col justify-center items-center px-5 md:px-20 py-10 text-xl tracking-normal leading-tight text-center bg-neutral-900 text-neutral-500">
-            <div className="flex overflow-hidden flex-col justify-center w-full max-w-7xl">
-              <div className="self-center">Organizations hiring on Levada</div>
-              <img
-                loading="lazy"
-                src="https://cdn.builder.io/api/v1/image/assets/TEMP/ea9056c2f1689d29866dd5ef2af5ed2d87cd7af7?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                className="object-contain mt-8 w-full aspect-[12.82]"
-              />
-            </div>
-          </div>
-
-          {/* What We Do Section */}
-          <div className="flex justify-center items-start px-5 md:px-20 lg:px-80 py-24 mt-8 bg-neutral-900">
-            <div className="flex flex-col flex-1 shrink items-center w-full max-w-screen-xl basis-0">
-              <div className="flex overflow-hidden flex-col items-center px-2.5 w-full">
-                <div className="flex gap-2 w-full text-lg tracking-normal leading-snug text-violet-400">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/e3e79c1f40536b45d25a3a6597a7e312fffbe541?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                    className="object-contain shrink-0 aspect-square w-6"
-                    alt="What We Do Icon"
-                  />
-                  <div className="grow shrink my-auto">WHAT DO WE DO?</div>
-                </div>
-                <div className="mt-6 text-4xl md:text-5xl tracking-tighter leading-tight text-center text-stone-300">
-                  Global Impact, African Roots
-                </div>
-                <div className="self-stretch mt-5 text-xl tracking-normal leading-7 text-center text-neutral-500">
-                  Levada connects reputable organizations with top verified talents from Africa. We are not 
-                  just a platform; we are the architects of a movement, committed to showcasing and 
-                  propelling African talent to new heights of recognition and success.
-                </div>
-                <div className="flex overflow-hidden flex-wrap gap-10 justify-center items-center mt-5 w-full max-w-xl text-base font-medium leading-tight text-stone-950">
-                  <a href="/hire-talent" className="grow shrink self-stretch px-6 md:px-24 py-4 my-auto bg-violet-400 min-w-[240px] rounded-[50px] hover:bg-violet-500 transition-colors">
-                    Hire Talent
-                  </a>
-                  <a href="/jobs" className="grow shrink self-stretch px-5 md:px-20 py-4 my-auto bg-violet-400 min-w-[240px] rounded-[50px] hover:bg-violet-500 transition-colors">
-                    Current jobs
-                  </a>
-                </div>
-              </div>
-              <div className="flex overflow-hidden flex-col justify-center items-center px-5 md:px-20 py-14 mt-6 w-full text-xl tracking-normal text-center">
-                <div className="flex flex-col items-center px-5 pt-2 pb-0.5 w-full">
-                  <div className="text-4xl md:text-5xl tracking-tighter leading-tight">
-                    Discover Levada
-                  </div>
-                  <div className="self-stretch mt-8 leading-7 text-neutral-500">
-                    We are on a journey of transforming the way African talent and global organizations 
-                    interact. Delve into the transformative experience of recruiting African talent. 
-                    Explore a world where possibilities are boundless, and success is just a connection away.
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* How It Works Section */}
-          <div className="flex flex-col items-center px-5 md:px-20 py-24 mt-8 w-full bg-stone-950">
-            <div className="flex flex-col justify-center items-center w-full max-w-7xl">
-              <div className="flex flex-col items-center w-full max-w-2xl">
-                <div className="flex gap-2 w-full text-lg tracking-normal leading-snug text-violet-400">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/9390d24f03835825a5bbfe4298bddc32db6411e2?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                    className="object-contain shrink-0 aspect-square w-6"
-                    alt="How It Works Icon"
-                  />
-                  <div className="grow shrink my-auto">HOW IT WORKS</div>
-                </div>
-                <div className="self-stretch mt-6 text-4xl md:text-5xl tracking-tighter leading-tight text-center text-stone-300">
-                  Ready to try Levada? Let's show you how to join our talent pool
-                </div>
-                <div className="self-stretch mt-6 text-xl tracking-normal leading-7 text-center text-neutral-500">
-                  We are on a journey of transforming the way African talent and global organizations interact. 
-                  Delve into the transformative experience of recruiting African talent. Explore a world where 
-                  possibilities are boundless, and success is just a connection away.
-                </div>
-              </div>
-
-              {/* Cards Section */}
-              <div className="flex flex-wrap gap-8 items-start justify-center mt-16 w-full">
-                {/* Card 1 */}
-                <div className="flex relative flex-col flex-1 min-w-[280px] max-w-md rounded-3xl border border-neutral-800">
-                  <div className="flex flex-col p-8">
-                    <div className="flex flex-col items-start rounded-3xl bg-neutral-900 bg-opacity-90">
-                      <div className="flex gap-2 rounded-3xl bg-neutral-900">
-                        <div className="self-start mt-44 text-xs font-medium tracking-tight leading-none text-white">
-                          DevOps
-                        </div>
-                        <div className="flex flex-col p-5 rounded-3xl border border-white border-opacity-10">
-                          <div className="text-lg tracking-tight leading-none text-violet-400">
-                            Test of Skills [a] [b]
-                          </div>
-                          <div className="flex flex-col mt-5">
-                            <div className="flex gap-2.5 items-start">
-                              <div className="h-12 w-2 rounded-xl bg-violet-400" />
-                              <div className="h-14 w-2 rounded-xl bg-violet-400" />
-                              <div className="h-20 w-2 rounded-xl bg-violet-400" />
-                              <div className="h-10 w-2 rounded-xl bg-violet-400" />
-                              <div className="h-9 w-2 rounded-xl bg-violet-400" />
-                              <div className="h-8 w-2 rounded-xl bg-violet-400" />
-                            </div>
-                            <div className="text-xs font-medium tracking-tight leading-none text-white">
-                              Data Analyst
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div className="mt-10">
-                      <div className="text-2xl tracking-tight leading-tight text-stone-300">
-                        Pass the Aptitude Test
-                      </div>
-                      <div className="mt-4 text-lg tracking-normal leading-6 text-neutral-500">
-                        You will take an aptitude test & also prove you can cut it in a real-world work setting.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card 2 */}
-                <div className="flex flex-col flex-1 min-w-[280px] max-w-md rounded-3xl border border-neutral-800">
-                  <div className="flex flex-col p-8">
-                    <div className="relative aspect-[2.492] rounded-3xl overflow-hidden">
-                      <img
-                        loading="lazy"
-                        srcSet="https://cdn.builder.io/api/v1/image/assets/TEMP/a6cd65ecf6dee09b6878842d56fa02aab2071598?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=100 100w, https://cdn.builder.io/api/v1/image/assets/TEMP/a6cd65ecf6dee09b6878842d56fa02aab2071598?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=200 200w, https://cdn.builder.io/api/v1/image/assets/TEMP/a6cd65ecf6dee09b6878842d56fa02aab2071598?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=400 400w, https://cdn.builder.io/api/v1/image/assets/TEMP/a6cd65ecf6dee09b6878842d56fa02aab2071598?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=800 800w, https://cdn.builder.io/api/v1/image/assets/TEMP/a6cd65ecf6dee09b6878842d56fa02aab2071598?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=1200 1200w, https://cdn.builder.io/api/v1/image/assets/TEMP/a6cd65ecf6dee09b6878842d56fa02aab2071598?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=1600 1600w, https://cdn.builder.io/api/v1/image/assets/TEMP/a6cd65ecf6dee09b6878842d56fa02aab2071598?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52&width=2000 2000w, https://cdn.builder.io/api/v1/image/assets/TEMP/a6cd65ecf6dee09b6878842d56fa02aab2071598?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                        className="object-cover w-full h-full"
-                        alt="Interview Process"
-                      />
-                    </div>
-                    <div className="mt-7">
-                      <div className="text-2xl tracking-tight leading-tight text-stone-300">
-                        Undergo Levada Interview
-                      </div>
-                      <div className="mt-4 text-lg tracking-normal leading-6 text-neutral-500">
-                        Our team will interview you — where you get to wow us, then you get approved and verified.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card 3 */}
-                <div className="flex relative flex-col flex-1 min-w-[280px] max-w-md rounded-3xl border border-neutral-800">
-                  <div className="flex flex-col p-8">
-                    <div className="text-2xl tracking-tight leading-tight text-stone-300">
-                      Get Matched & Elevated
-                    </div>
-                    <div className="mt-4 text-lg tracking-normal leading-6 text-neutral-500">
-                      Levada opens you to pool of jobs and get matched to a project of your choice. Start earning!
-                    </div>
-                    <div className="relative mt-8 h-48">
-                      <div className="absolute inset-0 flex items-center justify-between">
-                        <div className="flex flex-col gap-4">
-                          <div className="w-1 h-24 bg-violet-400 rounded-full" />
-                          <div className="w-1 h-20 bg-violet-400 rounded-full" />
-                          <div className="w-1 h-28 bg-violet-400 rounded-full" />
-                        </div>
-                        <div className="flex flex-col gap-4">
-                          <div className="w-1 h-32 bg-violet-400 rounded-full" />
-                          <div className="w-1 h-24 bg-violet-400 rounded-full" />
-                          <div className="w-1 h-28 bg-violet-400 rounded-full" />
-                        </div>
-                      </div>
-                      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-                        <div className="w-16 h-16 bg-violet-400 rounded-full flex items-center justify-center">
-                          <span className="text-white font-bold">$45</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Why Join Levada Section */}
-          <div className="flex flex-col items-center px-5 md:px-20 py-24 mt-8 w-full bg-neutral-900">
-            <div className="flex flex-col justify-center items-center w-full max-w-7xl">
-              <div className="flex flex-col items-center w-full max-w-2xl">
-                <div className="flex gap-2 self-center text-lg tracking-normal leading-snug text-violet-400">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/234304581748c6cccdad2577fec2829f8502ebbc?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                    className="object-contain shrink-0 aspect-square w-6"
-                    alt="Levada Talent Icon"
-                  />
-                  <div className="grow shrink my-auto">LEVADA TALENT</div>
-                </div>
-                <div className="mt-7 text-center text-neutral-500">
-                  We're on a journey to disrupt the traditional job-seeking process and explore new opportunities. 
-                  Connect, collaborate, and create with top talent across Africa.
-                </div>
-                <div className="mt-9 text-4xl md:text-5xl tracking-tighter leading-tight text-center text-stone-300">
-                  Why Join Levada?
-                </div>
-              </div>
-
-              {/* Cards Section */}
-              <div className="flex flex-wrap gap-8 justify-center items-center mt-16 w-full">
-                {/* Card 1 */}
-                <div className="flex relative flex-col flex-1 min-w-[280px] max-w-md rounded-3xl border border-neutral-800">
-                  <div className="flex flex-col items-center p-8">
-                    <div className="flex justify-center w-24 h-24">
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/46d20284fb319329f1b822a68dc065f9273e0add?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                        className="object-contain w-full h-full"
-                        alt="Effortless Connection"
-                      />
-                    </div>
-                    <div className="mt-14 text-2xl tracking-tight leading-tight text-stone-300">
-                      Effortless Connection
-                    </div>
-                    <div className="mt-14 text-lg tracking-normal leading-6 text-neutral-500">
-                      Say goodbye to tedious job hunting. Levada streamlines the process, 
-                      presenting you with tailored opportunities that match your expertise 
-                      and career goals. Effortlessly connect with organizations actively 
-                      seeking your unique talents.
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card 2 */}
-                <div className="flex relative flex-col flex-1 min-w-[280px] max-w-md rounded-3xl border border-neutral-800">
-                  <div className="flex flex-col items-center p-8">
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/fcac8eea01b7edd57ebeb55a46ee361d6b2c5484?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                      className="object-contain w-24 h-24"
-                      alt="Transparent and Fair"
-                    />
-                    <div className="mt-14 text-2xl tracking-tight leading-tight text-stone-300">
-                      Transparent and Fair
-                    </div>
-                    <div className="mt-14 text-lg tracking-normal leading-6 text-neutral-500">
-                      Experience transparency and fairness in every interaction. 
-                      Levada values integrity, ensuring a platform where your talent 
-                      is recognized and rewarded based on merit.
-                    </div>
-                  </div>
-                </div>
-
-                {/* Card 3 */}
-                <div className="flex relative flex-col flex-1 min-w-[280px] max-w-md rounded-3xl border border-neutral-800">
-                  <div className="flex flex-col items-center p-8">
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/31bd96aad42d34b02e0387dba072412acacb5eeb?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                      className="object-contain w-24 h-24"
-                      alt="Verified and Approved Pool"
-                    />
-                    <div className="mt-14 text-2xl tracking-tight leading-tight text-stone-300">
-                      Verified and Approved Pool
-                    </div>
-                    <div className="mt-14 text-lg tracking-normal leading-6 text-neutral-500">
-                      Join a community of verified professionals. Levada ensures that 
-                      organizations have access to a pool of top talents, and talents, 
-                      in turn, connect with reputable and forward-thinking employers.
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              {/* Features Section */}
-              <div className="flex flex-col mt-16 w-full">
-                <div className="flex flex-col md:flex-row gap-8">
-                  {/* Career Growth Support */}
-                  <div className="flex relative flex-col flex-1 min-w-[280px] rounded-3xl border border-neutral-800">
-                    <div className="flex flex-col p-8">
-                      <div className="text-2xl tracking-tight leading-8 text-stone-300">
-                        Career Growth Support
-                      </div>
-                      <div className="mt-4 text-lg tracking-normal leading-6 text-neutral-500">
-                        Levada is more than just a platform; it's your partner in career growth. 
-                        Access resources, training, and mentorship opportunities to enhance your 
-                        skills and navigate your career path with confidence.
-                      </div>
-                      <img
-                        loading="lazy"
-                        src="https://cdn.builder.io/api/v1/image/assets/TEMP/eb3cae367d20c7dbe08a498f8603566fe08f2d5a?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                        className="object-contain mt-8 w-full max-w-xs"
-                        alt="Career Growth"
-                      />
-                    </div>
-                  </div>
-
-                  {/* Collaborate in real-time */}
-                  <div className="flex relative flex-col flex-1 min-w-[280px] rounded-3xl border border-neutral-800">
-                    <div className="flex flex-col p-8">
-                      <div className="text-2xl tracking-tight leading-8 text-stone-300">
-                        Collaborate in real-time
-                      </div>
-                      <div className="mt-4 text-lg tracking-normal leading-6 text-neutral-500">
-                        Boost your career by connecting with global top-tier organizations. 
-                        Gain exposure to diverse industries and projects aligned with your 
-                        skills and goals.
-                      </div>
-                      <div className="relative mt-8 h-48">
-                        <div className="absolute inset-0 flex items-center justify-center">
-                          <div className="flex gap-4">
-                            <div className="w-20 h-20 bg-violet-400 rounded-full" />
-                            <div className="w-20 h-20 bg-cyan-400 rounded-full" />
-                            <div className="w-20 h-20 bg-violet-700 rounded-full" />
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Skills Tags */}
-                <div className="flex flex-wrap gap-4 justify-center mt-8">
-                  {[
-                    { icon: "f264fe007236bfc4a8609cf06871a3df6d1817cd", text: "Product Designer" },
-                    { icon: "582cc1bd92ada53793c46b68693653f35bfa6e20", text: "Data Analyst" },
-                    { icon: "11687b31f720f0817289811820d441e6408a8c92", text: "Back & Front-end Engineer" },
-                    { icon: "d2d444740c6d92866b7b1ec8f63aa0ed051d4098", text: "Product Management" },
-                    { icon: "5cf832764dbd0f6a7611493c638beec18caba67f", text: "Digital Marketer" },
-                    { icon: "e3e08a34165b39dc29a1bd9b640b942092240cfa", text: "Data Engineer" },
-                    { icon: "b32b5ebef4bc9be3fbbf20c57cf017e3693d3d5b", text: "Mobile Dev Engineer" }
-                  ].map((skill, index) => (
-                    <div key={index} className="flex relative gap-2 px-5 py-4 rounded-2xl bg-neutral-900 border border-neutral-800">
-                      <img
-                        loading="lazy"
-                        src={`https://cdn.builder.io/api/v1/image/assets/TEMP/${skill.icon}?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52`}
-                        className="object-contain shrink-0 aspect-square w-6"
-                        alt={skill.text}
-                      />
-                      <div className="text-lg tracking-normal leading-snug text-neutral-500">
-                        {skill.text}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Access Africa's Finest Talent Section */}
-          <div className="flex justify-center items-start px-5 md:px-10 py-9 bg-stone-950">
-            <div className="flex flex-col items-center w-full max-w-screen-xl">
-              <div className="flex flex-col items-center w-full max-w-2xl">
-                <div className="flex gap-2 text-lg tracking-normal leading-snug text-violet-400">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/32ee3d8e8814fd295c7b10ee2caa96aac35d7fa4?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                    className="object-contain shrink-0 aspect-square w-6"
-                    alt="Levada Client Icon"
-                  />
-                  <div className="grow shrink my-auto">LEVADA CLIENT</div>
-                </div>
-                <div className="mt-6 text-4xl md:text-5xl tracking-tighter leading-tight text-center text-stone-300">
-                  Access Africa's Finest Talent
-                </div>
-                <div className="mt-7 text-xl tracking-normal leading-7 text-center text-neutral-500">
-                  Tap into the immense talent reservoir that Africa has to offer. As a
-                  visionary organization, you're not just hiring; you're forming partnerships 
-                  with some of the finest professionals across the continent.
-                </div>
-                <div className="mt-5">
-                  <button className="px-6 md:px-12 py-4 text-base font-medium leading-tight text-stone-950 bg-violet-400 rounded-[50px] hover:bg-violet-500 transition-colors">
-                    Hire on Levada
+                  <button className="absolute right-2 top-1/2 -translate-y-1/2 py-3 px-6 text-base font-medium bg-violet-500 rounded-full text-stone-950 shadow-lg hover:bg-violet-400 transition-colors">
+                    Try Levada
                   </button>
                 </div>
               </div>
 
-              <div className="flex flex-col items-center w-full mt-6">
-                <div className="flex flex-col items-center w-full max-w-2xl">
-                  <div className="text-4xl md:text-5xl tracking-tighter leading-tight text-center text-stone-300">
-                    Elite Professionals at Your Fingertips
-                  </div>
-                  <div className="mt-5 text-xl tracking-normal leading-7 text-center text-neutral-500">
-                    We are on a journey of transforming the way African talent and
-                    global organizations interact. Delve into the transformative experience 
-                    of recruiting African talent. Explore a world where possibilities are 
-                    boundless, and success is just a connection away.
-                  </div>
-                </div>
-
-                {/* Cards Section */}
-                <div className="flex flex-wrap gap-8 justify-center items-center mt-16 w-full">
-                  {/* Card 1 */}
-                  <div className="flex relative flex-col flex-1 min-w-[280px] max-w-md rounded-3xl border border-neutral-800">
-                    <div className="flex flex-col items-center p-8">
-                      <div className="flex justify-center w-24 h-24">
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/11872548918794eed514256519f24ab62833a59f?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                          className="object-contain w-full h-full"
-                          alt="Efficiency Redefined"
-                        />
-                      </div>
-                      <div className="mt-14 text-2xl tracking-tight leading-tight text-stone-300">
-                        Efficiency Redefined
-                      </div>
-                      <div className="mt-14 text-lg tracking-normal leading-6 text-neutral-500">
-                        Levada takes the hassle out of talent discovery saving you time and 
-                        resources. Our platform is designed for efficiency, ensuring that your 
-                        organization can access top-tier talent seamlessly.
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Card 2 */}
-                  <div className="flex relative flex-col flex-1 min-w-[280px] max-w-md rounded-3xl border border-neutral-800">
-                    <div className="flex flex-col items-center p-8">
-                      <div className="flex justify-center w-24 h-24">
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/98db9832115d5933a62dfda10c05a97f880867b0?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                          className="object-contain w-full h-full"
-                          alt="Tailored Matches"
-                        />
-                      </div>
-                      <div className="mt-14 text-2xl tracking-tight leading-8 text-stone-300">
-                        Tailored Matches for Project Success
-                      </div>
-                      <div className="mt-14 text-lg tracking-normal leading-6 text-neutral-500">
-                        Build project teams strategically with Levada's intelligent matching and 
-                        personalized recommendations that synergize and drive project success.
-                      </div>
-                    </div>
-                  </div>
-
-                  {/* Card 3 */}
-                  <div className="flex relative flex-col flex-1 min-w-[280px] max-w-md rounded-3xl border border-neutral-800">
-                    <div className="flex flex-col items-center p-8">
-                      <div className="flex justify-center w-24 h-24">
-                        <img
-                          loading="lazy"
-                          src="https://cdn.builder.io/api/v1/image/assets/TEMP/43f866b2619ad88193752a763333a8f6d8483c09?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                          className="object-contain w-full h-full"
-                          alt="Verified Quality"
-                        />
-                      </div>
-                      <div className="mt-14 text-2xl tracking-tight leading-tight text-stone-300">
-                        Verified Quality
-                      </div>
-                      <div className="mt-14 text-lg tracking-normal leading-6 text-neutral-500">
-                        Rest easy knowing that every professional on Levada undergoes a 
-                        rigorous verification process. Your team deserves the best, and we 
-                        ensure quality at every step.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Success Stories Section */}
-          <div className="flex flex-col px-5 md:px-20 py-20 mt-2 w-full bg-neutral-900">
-            <div className="flex flex-col justify-center items-center w-full">
-              <div className="flex flex-col items-center w-full max-w-2xl">
-                <div className="flex flex-col w-full">
-                  <div className="flex gap-2 self-center text-lg tracking-normal leading-snug text-violet-400">
-                    <img
-                      loading="lazy"
-                      src="https://cdn.builder.io/api/v1/image/assets/TEMP/2191e19627b7f3f45706b831d867289ae2827225?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                      className="object-contain shrink-0 aspect-square w-6"
-                      alt="Success Stories Icon"
-                    />
-                    <div className="grow shrink my-auto">SUCCESS STORIES</div>
-                  </div>
-                  <div className="mt-6 text-4xl md:text-5xl tracking-tighter leading-tight text-center text-stone-300">
-                    Don't just take our word for it
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            {/* Testimonials Grid */}
-            <div className="mt-12 grid grid-cols-1 md:grid-cols-2 gap-8">
-              {/* Testimonial 1 */}
-              <div className="flex flex-col items-center w-full">
-                <div className="flex justify-center items-center w-48 h-48">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/bb50eaeda54c858aa65f2a928b9fd6277ef009ef?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                    className="object-contain w-full h-full rounded-full"
-                    alt="Tosin Adeniyi"
+              {/* Additional Content */}
+              <div className="grid md:grid-cols-2 gap-8 mt-12">
+                <div className="rounded-2xl overflow-hidden bg-neutral-800">
+                  <Image
+                    src="/img/hero-user-3.png"
+                    width={500}
+                    height={300}
+                    alt="Additional Content"
+                    className="w-full h-auto object-cover"
                   />
                 </div>
-                <div className="mt-9 text-lg tracking-normal leading-6 text-center text-neutral-500">
-                  "In the design world, my journey with Levada was a perfect match. Their 
-                  smart system linked me with ideal job opportunities worldwide, making job 
-                  hunting easy and stress-free. Levada isn't just a job site; it's a friendly 
-                  guide to finding success your way, removing barriers and opening doors to 
-                  global opportunities."
-                </div>
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/bbd80f92799ba9e6c852bf4c177a701d7141e3c6?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                  className="object-contain mt-6 w-48 h-48 rounded-full"
-                  alt="Tosin's Work"
-                />
-                <div className="mt-6 text-lg tracking-normal leading-snug text-center text-neutral-500">
-                  Tosin Adeniyi
-                </div>
-                <div className="mt-3 text-lg tracking-normal leading-snug text-center text-stone-300">
-                  Data Analyst - PushUp Design Agency
-                </div>
-              </div>
-
-              {/* Testimonial 2 */}
-              <div className="flex flex-col items-center w-full">
-                <div className="flex justify-center items-center w-48 h-48">
-                  <img
-                    loading="lazy"
-                    src="https://cdn.builder.io/api/v1/image/assets/TEMP/08dc912b65224ac393f9b9fb2c3b4ed31aa10d3c?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                    className="object-contain w-full h-full rounded-full"
-                    alt="Martin Loeppky"
+                <div className="rounded-2xl overflow-hidden bg-neutral-800">
+                  <Image
+                    src="/img/hero-user-5.png"
+                    width={500}
+                    height={300}
+                    alt="Additional Content"
+                    className="w-full h-auto object-cover"
                   />
                 </div>
-                <div className="mt-9 text-lg tracking-normal leading-6 text-center text-neutral-500">
-                  "Finding Levada was a real game-changer for our company. As a customer, 
-                  it helped our business a lot. Levada connected us with the best talent 
-                  from Africa, making hiring way easier. The people we hired through Levada 
-                  brought awesome skills to our team, helping our business grow. Levada 
-                  makes sure everyone's real and honest, so we know we're getting quality 
-                  talent."
-                </div>
-                <img
-                  loading="lazy"
-                  src="https://cdn.builder.io/api/v1/image/assets/TEMP/0973726ed3c733f977ed1b3cff8edc17f65bb197?placeholderIfAbsent=true&apiKey=9290ce17a2d047c99f04bce975019a52"
-                  className="object-contain mt-6 w-48 h-48 rounded-full"
-                  alt="Martin's Work"
+              </div>
+            </div>
+
+            {/* Testimonials - Takes 1/3 on large screens */}
+            <div className="space-y-6">
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/5] bg-neutral-800">
+                <Image
+                  src="/img/hero-user-4.png"
+                  width={400}
+                  height={500}
+                  alt="Felicia Akerele"
+                  className="object-cover w-full h-full"
                 />
-                <div className="mt-6 text-lg tracking-normal leading-snug text-center text-neutral-500">
-                  Martin Loeppky
-                </div>
-                <div className="mt-3 text-lg tracking-normal leading-snug text-center text-stone-300">
-                  CTO - Gate
-                </div>
-              </div>
-            </div>
-
-            {/* Stats Section */}
-            <div className="mt-28 grid grid-cols-1 md:grid-cols-3 gap-8 justify-center items-center">
-              <div className="flex flex-col items-center">
-                <div className="text-4xl md:text-7xl tracking-tighter leading-none text-stone-300">
-                  20+
-                </div>
-                <div className="mt-7 text-xl tracking-normal leading-tight text-neutral-500">
-                  Happy Clients
-                </div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="text-4xl md:text-7xl tracking-tighter leading-none text-stone-300">
-                  5k+
-                </div>
-                <div className="mt-7 text-xl tracking-normal leading-tight text-neutral-500">
-                  Verified Talents
-                </div>
-              </div>
-              <div className="flex flex-col items-center">
-                <div className="text-4xl md:text-7xl tracking-tighter leading-none text-stone-300">
-                  4.8
-                </div>
-                <div className="mt-7 text-xl tracking-normal leading-tight text-neutral-500">
-                  Review rate
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Connecting Africa's Tech Talent Section */}
-          <div className="flex flex-col justify-center items-center p-5 md:p-20 bg-stone-950">
-            <div className="flex flex-col justify-center items-center w-full max-w-7xl">
-              <div className="flex flex-col justify-center items-center w-full p-5 md:p-16 rounded-3xl bg-neutral-900">
-                <div className="flex flex-col items-center w-full max-w-2xl">
-                  <div className="text-4xl md:text-6xl font-medium tracking-tighter text-center leading-tight md:leading-[65px] text-stone-300">
-                    Connecting Africa's tech talent to global opportunities
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                  <div className="flex items-center gap-2">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <span className="text-white font-medium">Felicia Akerele</span>
                   </div>
-                  <div className="mt-9 text-lg md:text-xl tracking-normal leading-7 text-center text-neutral-500">
-                    Levada empowers individuals to discover tech jobs, access embedded finance, 
-                    and enjoy exclusive community benefits
-                  </div>
-                  <div className="flex relative justify-center mt-9 w-full max-w-md">
-                    <input
-                      type="email"
-                      placeholder="name@email.com"
-                      className="w-full py-6 px-8 text-base bg-stone-950 rounded-[50px] text-stone-300 focus:outline-none focus:ring-2 focus:ring-violet-400"
-                    />
-                    <button className="absolute right-4 top-1/2 -translate-y-1/2 py-4 px-8 text-base font-medium bg-violet-400 rounded-[40px] text-stone-950 shadow-[0px_20px_35px_rgba(153,141,235,0.25)] hover:bg-violet-500 transition-colors">
-                      Try Levada
-                    </button>
+                </div>
+              </div>
+              <div className="relative rounded-2xl overflow-hidden aspect-[4/3] bg-neutral-800">
+                <Image
+                  src="/img/hero-user-2.png"
+                  width={400}
+                  height={300}
+                  alt="Mark Gabriel"
+                  className="object-cover w-full h-full"
+                />
+                <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/80 to-transparent">
+                  <div className="flex items-center gap-2">
+                    <div className="flex">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} size={16} className="fill-yellow-400 text-yellow-400" />
+                      ))}
+                    </div>
+                    <span className="text-white font-medium">Mark Gabriel</span>
                   </div>
                 </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          {/* Footer */}
+      {/* Organizations Section */}
+      <section className="py-16 bg-neutral-800">
+        <div className="container px-4 mx-auto">
+          <div className="flex flex-col items-center">
+            <h2 className="text-xl text-neutral-400 mb-8">Organizations hiring on Levada</h2>
+            <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 items-center justify-items-center w-full">
+              {[...Array(6)].map((_, i) => (
+                <div key={i} className="h-12 w-24 bg-neutral-700/50 rounded-md flex items-center justify-center">
+                  <span className="text-neutral-400 text-xs">LOGO</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* What We Do Section */}
+      <section className="py-24 bg-neutral-900">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-3xl mx-auto text-center space-y-8">
+            <div className="inline-flex items-center gap-2 text-violet-400 font-medium">
+              <div className="w-6 h-6 rounded-full bg-violet-400/20 flex items-center justify-center">
+                <CheckCircle size={16} className="text-violet-400" />
+              </div>
+              <span>WHAT DO WE DO?</span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-stone-300">
+              Global Impact, African Roots
+            </h2>
+
+            <p className="text-lg text-neutral-400">
+              Levada connects reputable organizations with top verified talents from Africa. We are not just a platform;
+              we are the architects of a movement, committed to showcasing and propelling African talent to new heights
+              of recognition and success.
+            </p>
+
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link
+                href="/hire-talent"
+                className="px-8 py-3 bg-violet-500 text-white font-medium rounded-full hover:bg-violet-400 transition-colors"
+              >
+                Hire Talent
+              </Link>
+              <Link
+                href="/jobs"
+                className="px-8 py-3 bg-neutral-800 text-white font-medium rounded-full hover:bg-neutral-700 transition-colors"
+              >
+                Current Jobs
+              </Link>
+            </div>
+          </div>
+
+          <div className="mt-24 max-w-3xl mx-auto text-center">
+            <h2 className="text-4xl font-bold tracking-tight text-stone-300 mb-6">Discover Levada</h2>
+            <p className="text-lg text-neutral-400">
+              We are on a journey of transforming the way African talent and global organizations interact. Delve into
+              the transformative experience of recruiting African talent. Explore a world where possibilities are
+              boundless, and success is just a connection away.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section className="py-24 bg-neutral-800">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-3xl mx-auto text-center space-y-8 mb-16">
+            <div className="inline-flex items-center gap-2 text-violet-400 font-medium">
+              <div className="w-6 h-6 rounded-full bg-violet-400/20 flex items-center justify-center">
+                <CheckCircle size={16} className="text-violet-400" />
+              </div>
+              <span>HOW IT WORKS</span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-stone-300">
+              Ready to try Levada? Let's show you how to join our talent pool
+            </h2>
+
+            <p className="text-lg text-neutral-400">
+              We are on a journey of transforming the way African talent and global organizations interact. Delve into
+              the transformative experience of recruiting African talent.
+            </p>
+          </div>
+
+          {/* Process Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="bg-neutral-900 rounded-3xl border border-neutral-700 overflow-hidden transition-all hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/10">
+              <div className="p-8">
+                <div className="aspect-video bg-neutral-800 rounded-xl mb-8 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-violet-500 flex items-center justify-center">
+                    <span className="text-2xl font-bold text-white">1</span>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-stone-300 mb-4">Pass the Aptitude Test</h3>
+                <p className="text-neutral-400">
+                  You will take an aptitude test & also prove you can cut it in a real-world work setting.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-neutral-900 rounded-3xl border border-neutral-700 overflow-hidden transition-all hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/10">
+              <div className="p-8">
+                <div className="aspect-video bg-neutral-800 rounded-xl mb-8 overflow-hidden">
+                  <Image
+                    src="/placeholder.svg?height=200&width=400"
+                    width={400}
+                    height={200}
+                    alt="Interview Process"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <h3 className="text-2xl font-bold text-stone-300 mb-4">Undergo Levada Interview</h3>
+                <p className="text-neutral-400">
+                  Our team will interview you — where you get to wow us, then you get approved and verified.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-neutral-900 rounded-3xl border border-neutral-700 overflow-hidden transition-all hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/10">
+              <div className="p-8">
+                <div className="aspect-video bg-neutral-800 rounded-xl mb-8 flex items-center justify-center">
+                  <div className="w-16 h-16 rounded-full bg-violet-500 flex items-center justify-center">
+                    <span className="text-xl font-bold text-white">$45</span>
+                  </div>
+                </div>
+                <h3 className="text-2xl font-bold text-stone-300 mb-4">Get Matched & Elevated</h3>
+                <p className="text-neutral-400">
+                  Levada opens you to pool of jobs and get matched to a project of your choice. Start earning!
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Join Levada Section */}
+      <section className="py-24 bg-neutral-900">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
+            <div className="inline-flex items-center gap-2 text-violet-400 font-medium">
+              <div className="w-6 h-6 rounded-full bg-violet-400/20 flex items-center justify-center">
+                <CheckCircle size={16} className="text-violet-400" />
+              </div>
+              <span>LEVADA TALENT</span>
+            </div>
+
+            <p className="text-lg text-neutral-400">
+              We're on a journey to disrupt the traditional job-seeking process and explore new opportunities. Connect,
+              collaborate, and create with top talent across Africa.
+            </p>
+
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-stone-300">Why Join Levada?</h2>
+          </div>
+
+          {/* Benefits Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+            {/* Card 1 */}
+            <div className="bg-neutral-800 rounded-3xl border border-neutral-700 overflow-hidden transition-all hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/10">
+              <div className="p-8 flex flex-col items-center text-center h-full">
+                <div className="w-20 h-20 rounded-full bg-violet-500/20 flex items-center justify-center mb-8">
+                  <CheckCircle size={32} className="text-violet-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-stone-300 mb-4">Effortless Connection</h3>
+                <p className="text-neutral-400 flex-grow">
+                  Say goodbye to tedious job hunting. Levada streamlines the process, presenting you with tailored
+                  opportunities that match your expertise and career goals.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-neutral-800 rounded-3xl border border-neutral-700 overflow-hidden transition-all hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/10">
+              <div className="p-8 flex flex-col items-center text-center h-full">
+                <div className="w-20 h-20 rounded-full bg-violet-500/20 flex items-center justify-center mb-8">
+                  <CheckCircle size={32} className="text-violet-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-stone-300 mb-4">Transparent and Fair</h3>
+                <p className="text-neutral-400 flex-grow">
+                  Experience transparency and fairness in every interaction. Levada values integrity, ensuring a
+                  platform where your talent is recognized and rewarded based on merit.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-neutral-800 rounded-3xl border border-neutral-700 overflow-hidden transition-all hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/10">
+              <div className="p-8 flex flex-col items-center text-center h-full">
+                <div className="w-20 h-20 rounded-full bg-violet-500/20 flex items-center justify-center mb-8">
+                  <CheckCircle size={32} className="text-violet-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-stone-300 mb-4">Verified and Approved Pool</h3>
+                <p className="text-neutral-400 flex-grow">
+                  Join a community of verified professionals. Levada ensures that organizations have access to a pool of
+                  top talents, and talents, in turn, connect with reputable employers.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Features Section */}
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Career Growth Support */}
+            <div className="bg-neutral-800 rounded-3xl border border-neutral-700 overflow-hidden p-8">
+              <h3 className="text-2xl font-bold text-stone-300 mb-4">Career Growth Support</h3>
+              <p className="text-neutral-400 mb-6">
+                Levada is more than just a platform; it's your partner in career growth. Access resources, training, and
+                mentorship opportunities to enhance your skills and navigate your career path with confidence.
+              </p>
+              <div className="aspect-video bg-neutral-900 rounded-xl flex items-center justify-center">
+                <div className="w-16 h-16 rounded-full bg-violet-500 flex items-center justify-center">
+                  <ArrowRight size={24} className="text-white" />
+                </div>
+              </div>
+            </div>
+
+            {/* Collaborate in real-time */}
+            <div className="bg-neutral-800 rounded-3xl border border-neutral-700 overflow-hidden p-8">
+              <h3 className="text-2xl font-bold text-stone-300 mb-4">Collaborate in real-time</h3>
+              <p className="text-neutral-400 mb-6">
+                Boost your career by connecting with global top-tier organizations. Gain exposure to diverse industries
+                and projects aligned with your skills and goals.
+              </p>
+              <div className="aspect-video bg-neutral-900 rounded-xl flex items-center justify-center gap-4">
+                <div className="w-12 h-12 rounded-full bg-violet-500"></div>
+                <div className="w-12 h-12 rounded-full bg-violet-400"></div>
+                <div className="w-12 h-12 rounded-full bg-violet-300"></div>
+              </div>
+            </div>
+          </div>
+
+          {/* Skills Tags */}
+          <div className="flex flex-wrap gap-3 justify-center">
+            {[
+              "Product Designer",
+              "Data Analyst",
+              "Back & Front-end Engineer",
+              "Product Management",
+              "Digital Marketer",
+              "Data Engineer",
+              "Mobile Dev Engineer",
+            ].map((skill, index) => (
+              <div
+                key={index}
+                className="flex items-center gap-2 px-4 py-2 bg-neutral-800 rounded-full border border-neutral-700"
+              >
+                <div className="w-2 h-2 rounded-full bg-violet-400"></div>
+                <span className="text-neutral-300 text-sm">{skill}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Access Africa's Finest Talent Section */}
+      <section className="py-24 bg-neutral-800">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
+            <div className="inline-flex items-center gap-2 text-violet-400 font-medium">
+              <div className="w-6 h-6 rounded-full bg-violet-400/20 flex items-center justify-center">
+                <CheckCircle size={16} className="text-violet-400" />
+              </div>
+              <span>LEVADA CLIENT</span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-stone-300">
+              Access Africa's Finest Talent
+            </h2>
+
+            <p className="text-lg text-neutral-400">
+              Tap into the immense talent reservoir that Africa has to offer. As a visionary organization, you're not
+              just hiring; you're forming partnerships with some of the finest professionals across the continent.
+            </p>
+
+            <Link
+              href="/hire-talent"
+              className="inline-flex items-center gap-2 px-8 py-3 bg-violet-500 text-white font-medium rounded-full hover:bg-violet-400 transition-colors"
+            >
+              Hire on Levada
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+
+          <div className="max-w-3xl mx-auto text-center mb-16">
+            <h2 className="text-4xl font-bold tracking-tight text-stone-300 mb-6">
+              Elite Professionals at Your Fingertips
+            </h2>
+            <p className="text-lg text-neutral-400">
+              We are on a journey of transforming the way African talent and global organizations interact. Delve into
+              the transformative experience of recruiting African talent.
+            </p>
+          </div>
+
+          {/* Benefits Cards */}
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {/* Card 1 */}
+            <div className="bg-neutral-900 rounded-3xl border border-neutral-700 overflow-hidden transition-all hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/10">
+              <div className="p-8 flex flex-col items-center text-center h-full">
+                <div className="w-20 h-20 rounded-full bg-violet-500/20 flex items-center justify-center mb-8">
+                  <CheckCircle size={32} className="text-violet-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-stone-300 mb-4">Efficiency Redefined</h3>
+                <p className="text-neutral-400 flex-grow">
+                  Levada takes the hassle out of talent discovery saving you time and resources. Our platform is
+                  designed for efficiency, ensuring that your organization can access top-tier talent seamlessly.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 2 */}
+            <div className="bg-neutral-900 rounded-3xl border border-neutral-700 overflow-hidden transition-all hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/10">
+              <div className="p-8 flex flex-col items-center text-center h-full">
+                <div className="w-20 h-20 rounded-full bg-violet-500/20 flex items-center justify-center mb-8">
+                  <CheckCircle size={32} className="text-violet-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-stone-300 mb-4">Tailored Matches for Project Success</h3>
+                <p className="text-neutral-400 flex-grow">
+                  Build project teams strategically with Levada's intelligent matching and personalized recommendations
+                  that synergize and drive project success.
+                </p>
+              </div>
+            </div>
+
+            {/* Card 3 */}
+            <div className="bg-neutral-900 rounded-3xl border border-neutral-700 overflow-hidden transition-all hover:border-violet-500/50 hover:shadow-lg hover:shadow-violet-500/10">
+              <div className="p-8 flex flex-col items-center text-center h-full">
+                <div className="w-20 h-20 rounded-full bg-violet-500/20 flex items-center justify-center mb-8">
+                  <CheckCircle size={32} className="text-violet-400" />
+                </div>
+                <h3 className="text-2xl font-bold text-stone-300 mb-4">Verified Quality</h3>
+                <p className="text-neutral-400 flex-grow">
+                  Rest easy knowing that every professional on Levada undergoes a rigorous verification process. Your
+                  team deserves the best, and we ensure quality at every step.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Success Stories Section */}
+      <section className="py-24 bg-neutral-900">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-3xl mx-auto text-center space-y-6 mb-16">
+            <div className="inline-flex items-center gap-2 text-violet-400 font-medium">
+              <div className="w-6 h-6 rounded-full bg-violet-400/20 flex items-center justify-center">
+                <CheckCircle size={16} className="text-violet-400" />
+              </div>
+              <span>SUCCESS STORIES</span>
+            </div>
+
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-stone-300">
+              Don't just take our word for it
+            </h2>
+          </div>
+
+          {/* Testimonials */}
+          <div className="grid md:grid-cols-2 gap-12 mb-24">
+            {/* Testimonial 1 */}
+            <div className="flex flex-col items-center">
+              <div className="w-32 h-32 rounded-full overflow-hidden mb-8">
+                <Image
+                  src="/placeholder.svg?height=200&width=200"
+                  width={200}
+                  height={200}
+                  alt="Tosin Adeniyi"
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="text-neutral-400 text-center mb-8">
+                "In the design world, my journey with Levada was a perfect match. Their smart system linked me with
+                ideal job opportunities worldwide, making job hunting easy and stress-free. Levada isn't just a job
+                site; it's a friendly guide to finding success your way."
+              </p>
+              <div className="text-center">
+                <h4 className="text-xl font-bold text-stone-300">Tosin Adeniyi</h4>
+                <p className="text-neutral-400">Data Analyst - PushUp Design Agency</p>
+              </div>
+            </div>
+
+            {/* Testimonial 2 */}
+            <div className="flex flex-col items-center">
+              <div className="w-32 h-32 rounded-full overflow-hidden mb-8">
+                <Image
+                  src="/placeholder.svg?height=200&width=200"
+                  width={200}
+                  height={200}
+                  alt="Martin Loeppky"
+                  className="object-cover w-full h-full"
+                />
+              </div>
+              <div className="flex mb-4">
+                {[...Array(5)].map((_, i) => (
+                  <Star key={i} size={20} className="fill-yellow-400 text-yellow-400" />
+                ))}
+              </div>
+              <p className="text-neutral-400 text-center mb-8">
+                "Finding Levada was a real game-changer for our company. As a customer, it helped our business a lot.
+                Levada connected us with the best talent from Africa, making hiring way easier. The people we hired
+                through Levada brought awesome skills to our team, helping our business grow."
+              </p>
+              <div className="text-center">
+                <h4 className="text-xl font-bold text-stone-300">Martin Loeppky</h4>
+                <p className="text-neutral-400">CTO - Gate</p>
+              </div>
+            </div>
+          </div>
+
+          {/* Stats */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-neutral-800 rounded-2xl p-8 text-center">
+              <div className="text-5xl md:text-6xl font-bold text-violet-400 mb-4">20+</div>
+              <div className="text-neutral-300">Happy Clients</div>
+            </div>
+            <div className="bg-neutral-800 rounded-2xl p-8 text-center">
+              <div className="text-5xl md:text-6xl font-bold text-violet-400 mb-4">5k+</div>
+              <div className="text-neutral-300">Verified Talents</div>
+            </div>
+            <div className="bg-neutral-800 rounded-2xl p-8 text-center">
+              <div className="text-5xl md:text-6xl font-bold text-violet-400 mb-4">4.8</div>
+              <div className="text-neutral-300">Review Rate</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 bg-neutral-800">
+        <div className="container px-4 mx-auto">
+          <div className="max-w-4xl mx-auto bg-neutral-900 rounded-3xl p-8 md:p-16">
+            <div className="text-center space-y-8">
+              <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-stone-300">
+                Connecting Africa's tech talent to global opportunities
+              </h2>
+              <p className="text-xl text-neutral-400 max-w-2xl mx-auto">
+                Levada empowers individuals to discover tech jobs, access embedded finance, and enjoy exclusive
+                community benefits
+              </p>
+              <div className="relative max-w-md mx-auto">
+                <input
+                  type="email"
+                  placeholder="name@email.com"
+                  className="w-full py-4 px-6 pr-36 text-base bg-neutral-800 rounded-full text-stone-300 focus:outline-none focus:ring-2 focus:ring-violet-400 transition-all"
+                />
+                <button className="absolute right-2 top-1/2 -translate-y-1/2 py-3 px-6 text-base font-medium bg-violet-500 rounded-full text-stone-950 shadow-lg hover:bg-violet-400 transition-colors">
+                  Try Levada
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="w-full py-12 bg-neutral-900 border-t border-neutral-800">
+        <div className="container mx-auto px-4">
           <Footer />
         </div>
-      </div>
+      </footer>
     </div>
-  );
+  )
 }
